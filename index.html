@@ -28,34 +28,55 @@
     header {
       background: #1f2937;
       color: white;
-      padding: 2rem 1rem;
+    }
+
+    .header-top {
+      padding: 2rem 1rem 1.2rem;
       text-align: center;
     }
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
+    .header-top h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
     }
 
-    header p {
+    .header-top p {
       font-size: 1rem;
       opacity: 0.9;
-      margin-bottom: 0.8rem;
+    }
+
+    /* =========================
+       FULL-WIDTH NAVIGATION
+       ========================= */
+    nav {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.8rem 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     nav a {
       color: #93c5fd;
-      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.05rem;
+      padding: 0.4rem 0.8rem;
     }
 
     nav a:hover {
+      color: white;
       text-decoration: underline;
     }
 
     /* =========================
-       HORIZONTAL IMAGE SCROLLER
+       IMAGE SCROLLER
        ========================= */
     .image-slider {
       width: 100%;
@@ -110,27 +131,42 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    /* =========================
+       RESPONSIVE NAV
+       ========================= */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <!-- =========================
-       HEADER (TOP)
+       HEADER
        ========================= -->
   <header>
-    <h1>Saptak Das</h1>
-    <p>Student | Research Enthusiast | Developer</p>
+    <div class="header-top">
+      <h1>Saptak Das</h1>
+      <p>Student | Research Enthusiast | Developer</p>
+    </div>
+
     <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- =========================
-       IMAGE SCROLLER (BELOW HEADER)
+       IMAGE SCROLLER
        ========================= -->
   <div class="image-slider">
     <div class="image-track">

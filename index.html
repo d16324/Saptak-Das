@@ -2,168 +2,115 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Saptak Das</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Saptak Das</title>
 
 <style>
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #020617;
-  color: #e5e7eb;
-}
-
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: linear-gradient(135deg, #020617, #020617ee);
-  border-bottom: 1px solid rgba(148,163,184,0.2);
-  padding: 14px 10px;
+  background: linear-gradient(135deg, #020617, #020617dd);
+  color: white;
   text-align: center;
+  padding: 25px 20px;
 }
 
 header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #f8fafc;
+  font-size: 2.3rem;
 }
 
 header p {
-  font-size: 0.9rem;
-  color: #cbd5f5;
-  margin: 4px 0 10px;
+  opacity: 0.85;
+  margin-top: 6px;
 }
 
+/* ===== NAVIGATION ===== */
 nav {
+  margin-top: 14px;
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
 nav a {
-  color: #93c5fd;
+  color: #7dd3fc;
   text-decoration: none;
   font-weight: 600;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffffff;
-  border-bottom: 2px solid #38bdf8;
+  color: white;
 }
 
-/* ================= IMAGE SLIDER ================= */
+/* ===== IMAGE SLIDER ===== */
 .slider {
-  width: 100%;
   overflow: hidden;
-  background: #020617;
+  width: 100%;
+  background: black;
 }
 
 .slider-track {
   display: flex;
-  width: max-content;
-  animation: scroll 35s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
-.slider:hover .slider-track {
-  animation-play-state: paused;
-}
-
-.slider-track img {
+.slider img {
   width: 100vw;
-  height: 55vh;
+  height: 60vh;
   object-fit: cover;
 }
 
+/* Auto-scroll animation */
 @keyframes scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-300vw); }
 }
 
-/* ================= ML BACKGROUND WITH 50% OVERLAY ================= */
+/* ===== ML BACKGROUND SECTION ===== */
 .ml-background {
-  position: relative;
-  background: url("assets/ml-bg.jpg") center/cover no-repeat fixed;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("assets/ml-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 80px 20px;
 }
 
-.ml-background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.55); /* ~50% transparency */
-  z-index: 0;
-}
-
-/* ================= CONTENT ================= */
-main {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-section {
-  background: rgba(255, 255, 255, 0.96);
-  color: #020617;
-  padding: 32px;
-  margin-bottom: 34px;
+/* ===== CONTENT CARDS ===== */
+.card {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.96);
+  padding: 30px 40px;
   border-radius: 14px;
-  box-shadow: 0 30px 60px rgba(2,6,23,0.6);
-  transition: all 0.3s ease;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease;
 }
 
-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 40px 80px rgba(56,189,248,0.4);
+.card:hover {
+  transform: translateY(-6px);
 }
 
-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
+.card h2 {
+  margin-bottom: 10px;
+  color: #020617;
 }
 
-section p {
-  line-height: 1.7;
-  color: #1f2937;
-}
-
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 22px;
   background: #020617;
-  color: #94a3b8;
-  border-top: 1px solid rgba(148,163,184,0.2);
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav {
-    gap: 20px;
-  }
-
-  .slider-track img {
-    height: 40vh;
-  }
+  color: #9ca3af;
+  text-align: center;
+  padding: 18px;
+  font-size: 0.9rem;
 }
 </style>
 </head>
@@ -173,6 +120,7 @@ footer {
 <header>
   <h1>Saptak Das</h1>
   <p>Student | Research Enthusiast | Developer</p>
+
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -188,47 +136,41 @@ footer {
     <img src="assets/img2.jpg">
     <img src="assets/img3.jpg">
     <img src="assets/img1.jpg">
-    <img src="assets/img2.jpg">
-    <img src="assets/img3.jpg">
   </div>
 </div>
 
-<!-- ML BACKGROUND STARTS HERE -->
+<!-- ML BACKGROUND CONTENT -->
 <div class="ml-background">
-  <main>
 
-    <section id="about">
-      <h2>🧠 About Me</h2>
-      <p>
-        I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
-        scientific computing, and research-oriented software development.
-      </p>
-    </section>
+  <section id="about" class="card">
+    <h2>🧠 About Me</h2>
+    <p>
+      I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
+      scientific computing, and research-oriented software development.
+    </p>
+  </section>
 
-    <section id="education">
-      <h2>🎓 Education</h2>
-      <p>
-        BS–MS student with a strong foundation in mathematics and computational sciences.
-      </p>
-    </section>
+  <section id="education" class="card">
+    <h2>🎓 Education</h2>
+    <p>
+      BS–MS student with a strong foundation in mathematics and computational sciences.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>📊 Projects</h2>
-      <p>
-        Academic simulations, machine learning models, and software tools
-        for scientific and data-driven analysis.
-      </p>
-    </section>
+  <section id="projects" class="card">
+    <h2>📊 Projects</h2>
+    <p>
+      Academic simulations, machine learning models, and software tools
+      for scientific and data-driven analysis.
+    </p>
+  </section>
 
-    <section id="contact">
-      <h2>📬 Contact</h2>
-      <p>
-        Email: your-email@example.com<br>
-        GitHub: github.com/d16324
-      </p>
-    </section>
+  <section id="contact" class="card">
+    <h2>📬 Contact</h2>
+    <p>Email: your-email@example.com</p>
+    <p>GitHub: github.com/d16324</p>
+  </section>
 
-  </main>
 </div>
 
 <footer>

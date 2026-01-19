@@ -71,7 +71,7 @@ nav a:hover {
 /* ===== HERO SLIDER ===== */
 .slider {
   width: 100%;
-  height: 65vh;              /* Adjust: 60–70vh is ideal */
+  height: 65vh;
   overflow: hidden;
   background: #020617;
   position: relative;
@@ -80,7 +80,8 @@ nav a:hover {
 .slider-track {
   display: flex;
   height: 100%;
-  animation: scroll 35s linear infinite;
+  width: max-content;
+  animation: scroll 120s linear infinite;
 }
 
 .slider:hover .slider-track {
@@ -88,16 +89,15 @@ nav a:hover {
 }
 
 .slider-track img {
-  width: 100vw;              /* Exactly one screen width */
+  width: 100vw;
   height: 100%;
-  object-fit: cover;         /* COVER without distortion */
+  object-fit: cover;
   flex-shrink: 0;
 }
 
-/* Smooth infinite scroll */
 @keyframes scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-300vw); } /* 3 images */
+  to   { transform: translateX(-50%); }
 }
 
 

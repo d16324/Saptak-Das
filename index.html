@@ -1,220 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Saptak Das</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Saptak Das</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #e5e7eb;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(99,102,241,0.18), transparent 45%),
-        linear-gradient(180deg, #020617, #020617);
-      min-height: 100vh;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
 
-    /* ================= HEADER (COMPACT) ================= */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: linear-gradient(135deg, #020617, #020617ee);
-      border-bottom: 1px solid rgba(148,163,184,0.15);
-      text-align: center;
-      padding: 18px 12px 14px;
-      backdrop-filter: blur(6px);
-    }
+/* ================= HEADER ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #020617, #020617ee);
+  border-bottom: 1px solid rgba(148,163,184,0.2);
+  padding: 14px 10px;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: #f8fafc;
-    }
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
 
-    header p {
-      font-size: 0.9rem;
-      opacity: 0.85;
-      margin-bottom: 10px;
-      color: #cbd5f5;
-    }
+header p {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin: 4px 0 10px;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
 
-    nav a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 600;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
-    }
+nav a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
 
-    nav a:hover {
-      color: #ffffff;
-      border-bottom: 2px solid #38bdf8;
-    }
+nav a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #38bdf8;
+}
 
-    /* ================= AUTO IMAGE SCROLLER ================= */
-    .slider {
-      overflow: hidden;
-      width: 100%;
-      background: #020617;
-      border-bottom: 1px solid rgba(148,163,184,0.15);
-    }
+/* ================= IMAGE SLIDER ================= */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  background: #020617;
+}
 
-    .slider-track {
-      display: flex;
-      width: max-content;
-      animation: scroll 32s linear infinite;
-    }
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
 
-    .slider:hover .slider-track {
-      animation-play-state: paused;
-    }
+.slider:hover .slider-track {
+  animation-play-state: paused;
+}
 
-    .slider-track img {
-      width: 100vw;
-      height: 55vh;
-      object-fit: cover;
-      flex-shrink: 0;
-      filter: contrast(1.05) brightness(0.95);
-    }
+.slider-track img {
+  width: 100vw;
+  height: 55vh;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+}
 
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-    /* ================= CONTENT ================= */
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 48px 20px 60px;
-    }
+/* ================= CONTENT WITH ML BACKGROUND ================= */
+.main-bg {
+  background:
+    linear-gradient(
+      rgba(2,6,23,0.92),
+      rgba(2,6,23,0.96)
+    ),
+    url("assets/ml-bg.jpg");
 
-    section {
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      color: #020617;
-      padding: 32px;
-      margin-bottom: 32px;
-      border-radius: 14px;
-      box-shadow: 0 25px 40px rgba(2,6,23,0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-    section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 60px rgba(56,189,248,0.25);
-    }
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    section h2 {
-      margin-bottom: 14px;
-      font-size: 1.6rem;
-      color: #020617;
-    }
+section {
+  background: rgba(255,255,255,0.96);
+  color: #020617;
+  padding: 32px;
+  margin-bottom: 34px;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px rgba(2,6,23,0.5);
+  transition: all 0.3s ease;
+}
 
-    section p {
-      color: #1f2937;
-      line-height: 1.65;
-    }
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 40px 80px rgba(56,189,248,0.4);
+}
 
-    /* ================= FOOTER ================= */
-    footer {
-      text-align: center;
-      padding: 22px;
-      background: linear-gradient(135deg, #020617, #020617ee);
-      color: #94a3b8;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(148,163,184,0.15);
-    }
+section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
+section p {
+  line-height: 1.7;
+  color: #1f2937;
+}
 
-      .slider-track img {
-        height: 42vh;
-      }
-    }
-  </style>
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #020617;
+  color: #94a3b8;
+  border-top: 1px solid rgba(148,163,184,0.2);
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .slider-track img {
+    height: 40vh;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Saptak Das</h1>
-    <p>Student | Research Enthusiast | Developer</p>
+<header>
+  <h1>Saptak Das</h1>
+  <p>Student | Research Enthusiast | Developer</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- AUTO SCROLL IMAGES -->
-  <div class="slider">
-    <div class="slider-track">
-      <img src="assets/img1.jpg" alt="">
-      <img src="assets/img2.jpg" alt="">
-      <img src="assets/img3.jpg" alt="">
-      <img src="assets/img1.jpg" alt="">
-      <img src="assets/img2.jpg" alt="">
-      <img src="assets/img3.jpg" alt="">
-    </div>
+<!-- AUTO SCROLLING IMAGES -->
+<div class="slider">
+  <div class="slider-track">
+    <img src="assets/img1.jpg">
+    <img src="assets/img2.jpg">
+    <img src="assets/img3.jpg">
+    <img src="assets/img1.jpg">
+    <img src="assets/img2.jpg">
+    <img src="assets/img3.jpg">
   </div>
+</div>
 
-  <!-- CONTENT -->
+<!-- CONTENT AREA WITH ML BACKGROUND -->
+<div class="main-bg">
   <main>
 
     <section id="about">
-      <h2>About Me</h2>
+      <h2>🧠 About Me</h2>
       <p>
         I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
-        scientific computing, and research-driven software development.
+        scientific computing, and research-oriented software development.
       </p>
     </section>
 
     <section id="education">
-      <h2>Education</h2>
+      <h2>🎓 Education</h2>
       <p>
         BS–MS student with a strong foundation in mathematics and computational sciences.
       </p>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>📊 Projects</h2>
       <p>
-        Academic simulations, machine learning models, and scientific software tools.
+        Academic simulations, machine learning models, and software tools
+        for scientific and data-driven analysis.
       </p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>📬 Contact</h2>
       <p>
         Email: your-email@example.com<br>
         GitHub: github.com/d16324
@@ -222,10 +227,11 @@
     </section>
 
   </main>
+</div>
 
-  <footer>
-    © 2026 Saptak Das · GitHub Pages
-  </footer>
+<footer>
+  © 2026 Saptak Das · GitHub Pages
+</footer>
 
 </body>
 </html>

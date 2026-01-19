@@ -23,7 +23,6 @@
       font-family: 'Inter', sans-serif;
       background: #f5f7fa;
       color: #1f2937;
-      line-height: 1.6;
     }
 
     /* ================= HEADER ================= */
@@ -71,28 +70,37 @@
       border-bottom: 2px solid #60a5fa;
     }
 
-    /* ================= IMAGE SLIDER ================= */
+    /* ================= AUTO SLIDER ================= */
     .slider {
+      overflow: hidden;
+      width: 100%;
       background: #000;
-      overflow-x: auto;
-      white-space: nowrap;
-      scroll-snap-type: x mandatory;
     }
 
     .slider-track {
       display: flex;
+      width: max-content;
+      animation: scroll 30s linear infinite;
+    }
+
+    .slider:hover .slider-track {
+      animation-play-state: paused;
     }
 
     .slider-track img {
       width: 100vw;
       height: 70vh;
       object-fit: cover;
-      scroll-snap-align: start;
-      transition: transform 0.5s ease;
+      flex-shrink: 0;
     }
 
-    .slider-track img:hover {
-      transform: scale(1.03);
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     /* ================= CONTENT ================= */
@@ -123,9 +131,9 @@
 
     section p {
       color: #374151;
+      line-height: 1.6;
     }
 
-    /* ================= FOOTER ================= */
     footer {
       text-align: center;
       padding: 24px;
@@ -134,14 +142,9 @@
       font-size: 0.9rem;
     }
 
-    /* ================= RESPONSIVE ================= */
     @media (max-width: 768px) {
       header h1 {
         font-size: 1.9rem;
-      }
-
-      nav {
-        gap: 20px;
       }
 
       .slider-track img {
@@ -166,12 +169,17 @@
     </nav>
   </header>
 
-  <!-- IMAGE SLIDER -->
+  <!-- AUTO SCROLLING IMAGES -->
   <div class="slider">
     <div class="slider-track">
-      <img src="assets/img1.jpg" alt="Research activity">
+      <!-- Images repeated twice for infinite loop -->
+      <img src="assets/img1.jpg" alt="Research">
       <img src="assets/img2.jpg" alt="Presentation">
-      <img src="assets/img3.jpg" alt="Academic work">
+      <img src="assets/img3.jpg" alt="Academic Work">
+
+      <img src="assets/img1.jpg" alt="Research">
+      <img src="assets/img2.jpg" alt="Presentation">
+      <img src="assets/img3.jpg" alt="Academic Work">
     </div>
   </div>
 
@@ -179,67 +187,41 @@
   <main>
 
     <section id="about">
-      <h2>🧠 About Me</h2>
+      <h2>About Me</h2>
       <p>
-        Hello! I am <strong>Saptak Das</strong>.  
-        My academic interests include mathematics, machine learning, scientific computing,
-        and interdisciplinary research bridging theory with computation.
+        I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
+        scientific computing, and research-oriented software development.
       </p>
     </section>
 
     <section id="education">
-      <h2>🎓 Education</h2>
+      <h2>Education</h2>
       <p>
         BS–MS Student with a strong foundation in mathematics and computational sciences.
       </p>
     </section>
 
     <section id="projects">
-      <h2>🧩 Projects</h2>
+      <h2>Projects</h2>
       <p>
-        Projects include academic simulations, machine learning models,
+        Academic simulations, machine learning models,
         and software tools for scientific analysis.
       </p>
     </section>
 
     <section id="contact">
-      <h2>📬 Contact</h2>
+      <h2>Contact</h2>
       <p>
-        Email: your-email@example.com <br>
+        Email: your-email@example.com<br>
         GitHub: github.com/d16324
       </p>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    © 2026 Saptak Das · Built with GitHub Pages
+    © 2026 Saptak Das · GitHub Pages
   </footer>
-
-  <!-- ACTIVE NAV SCRIPT -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>

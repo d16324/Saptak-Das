@@ -68,15 +68,18 @@ nav a:hover {
 }
 
 /* ================= IMAGE SLIDER ================= */
+/* ===== HERO SLIDER ===== */
 .slider {
   width: 100%;
+  height: 65vh;              /* Adjust: 60–70vh is ideal */
   overflow: hidden;
   background: #020617;
+  position: relative;
 }
 
 .slider-track {
   display: flex;
-  width: max-content;
+  height: 100%;
   animation: scroll 35s linear infinite;
 }
 
@@ -85,15 +88,18 @@ nav a:hover {
 }
 
 .slider-track img {
-  width: 90vw;
-  height: 105vh;
-  object-fit: cover;
+  width: 100vw;              /* Exactly one screen width */
+  height: 100%;
+  object-fit: cover;         /* COVER without distortion */
+  flex-shrink: 0;
 }
 
+/* Smooth infinite scroll */
 @keyframes scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-300vw); } /* 3 images */
 }
+
 
 /* ================= ML BACKGROUND WITH 50% OVERLAY ================= */
 .ml-background {

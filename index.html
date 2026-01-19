@@ -5,7 +5,6 @@
   <title>Saptak Das</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,37 +20,44 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #1f2937;
+      color: #e5e7eb;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(99,102,241,0.18), transparent 45%),
+        linear-gradient(180deg, #020617, #020617);
+      min-height: 100vh;
     }
 
-    /* ================= HEADER ================= */
+    /* ================= HEADER (COMPACT) ================= */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(135deg, #1f2937, #0f172a);
-      color: #fff;
+      background: linear-gradient(135deg, #020617, #020617ee);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
       text-align: center;
-      padding: 32px 16px 20px;
+      padding: 18px 12px 14px;
+      backdrop-filter: blur(6px);
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      color: #f8fafc;
     }
 
     header p {
-      font-size: 1rem;
+      font-size: 0.9rem;
       opacity: 0.85;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
+      color: #cbd5f5;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 48px;
+      gap: 40px;
       flex-wrap: wrap;
     }
 
@@ -59,28 +65,28 @@
       color: #93c5fd;
       text-decoration: none;
       font-weight: 600;
-      padding-bottom: 4px;
+      padding-bottom: 3px;
       border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
       color: #ffffff;
-      border-bottom: 2px solid #60a5fa;
+      border-bottom: 2px solid #38bdf8;
     }
 
-    /* ================= AUTO SLIDER ================= */
+    /* ================= AUTO IMAGE SCROLLER ================= */
     .slider {
       overflow: hidden;
       width: 100%;
-      background: #000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148,163,184,0.15);
     }
 
     .slider-track {
       display: flex;
       width: max-content;
-      animation: scroll 30s linear infinite;
+      animation: scroll 32s linear infinite;
     }
 
     .slider:hover .slider-track {
@@ -89,66 +95,67 @@
 
     .slider-track img {
       width: 100vw;
-      height: 70vh;
+      height: 55vh;
       object-fit: cover;
       flex-shrink: 0;
+      filter: contrast(1.05) brightness(0.95);
     }
 
     @keyframes scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     /* ================= CONTENT ================= */
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 48px 20px 60px;
     }
 
     section {
-      background: #ffffff;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      color: #020617;
       padding: 32px;
       margin-bottom: 32px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
+      border-radius: 14px;
+      box-shadow: 0 25px 40px rgba(2,6,23,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     section:hover {
       transform: translateY(-4px);
+      box-shadow: 0 30px 60px rgba(56,189,248,0.25);
     }
 
     section h2 {
       margin-bottom: 14px;
       font-size: 1.6rem;
-      color: #0f172a;
+      color: #020617;
     }
 
     section p {
-      color: #374151;
-      line-height: 1.6;
+      color: #1f2937;
+      line-height: 1.65;
     }
 
+    /* ================= FOOTER ================= */
     footer {
       text-align: center;
-      padding: 24px;
-      background: #0f172a;
-      color: #cbd5f5;
+      padding: 22px;
+      background: linear-gradient(135deg, #020617, #020617ee);
+      color: #94a3b8;
       font-size: 0.9rem;
+      border-top: 1px solid rgba(148,163,184,0.15);
     }
 
     @media (max-width: 768px) {
       header h1 {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
       }
 
       .slider-track img {
-        height: 50vh;
+        height: 42vh;
       }
     }
   </style>
@@ -169,17 +176,15 @@
     </nav>
   </header>
 
-  <!-- AUTO SCROLLING IMAGES -->
+  <!-- AUTO SCROLL IMAGES -->
   <div class="slider">
     <div class="slider-track">
-      <!-- Images repeated twice for infinite loop -->
-      <img src="assets/img1.jpg" alt="Research">
-      <img src="assets/img2.jpg" alt="Presentation">
-      <img src="assets/img3.jpg" alt="Academic Work">
-
-      <img src="assets/img1.jpg" alt="Research">
-      <img src="assets/img2.jpg" alt="Presentation">
-      <img src="assets/img3.jpg" alt="Academic Work">
+      <img src="assets/img1.jpg" alt="">
+      <img src="assets/img2.jpg" alt="">
+      <img src="assets/img3.jpg" alt="">
+      <img src="assets/img1.jpg" alt="">
+      <img src="assets/img2.jpg" alt="">
+      <img src="assets/img3.jpg" alt="">
     </div>
   </div>
 
@@ -190,22 +195,21 @@
       <h2>About Me</h2>
       <p>
         I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
-        scientific computing, and research-oriented software development.
+        scientific computing, and research-driven software development.
       </p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <p>
-        BS–MS Student with a strong foundation in mathematics and computational sciences.
+        BS–MS student with a strong foundation in mathematics and computational sciences.
       </p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <p>
-        Academic simulations, machine learning models,
-        and software tools for scientific analysis.
+        Academic simulations, machine learning models, and scientific software tools.
       </p>
     </section>
 

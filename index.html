@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saptak Das | Personal Webpage</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Personal webpage of Saptak Das – Academics, Research, Projects.">
+  <meta name="description" content="Personal webpage of Saptak Das">
   <meta name="author" content="Saptak Das">
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f4f6f8;
       color: #333;
-      line-height: 1.6;
     }
 
-    /* HERO SECTION */
+    /* =========================
+       FULL SCREEN IMAGE SCROLLER
+       ========================= */
     .hero {
-      position: relative;
+      width: 100vw;
       height: 100vh;
       overflow: hidden;
+      position: relative;
     }
 
-    .bg-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.55);
-      height: 100%;
+    .hero-track {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      width: calc(100vw * 4);
+      height: 100%;
+      animation: scroll 20s linear infinite;
+    }
+
+    .hero-track img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-200vw);
+      }
+    }
+
+    /* =========================
+       CONTENT SECTION
+       ========================= */
+    header {
+      background: #1f2937;
       color: white;
-    }
-
-    .hero-overlay h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero-overlay p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      padding: 2rem;
+      text-align: center;
     }
 
     nav a {
       color: #93c5fd;
-      margin: 0 12px;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
     }
@@ -70,45 +76,16 @@
 
     section {
       max-width: 900px;
-      margin: 2.5rem auto;
+      margin: 2rem auto;
       background: white;
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
     h2 {
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 0.5rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    /* IMAGE SLIDER */
-    .slider {
-      overflow: hidden;
-      width: 100%;
-      margin-top: 1.5rem;
-    }
-
-    .slide-track {
-      display: flex;
-      width: calc(260px * 8);
-      animation: scroll 30s linear infinite;
-    }
-
-    .slide-track img {
-      width: 260px;
-      height: 170px;
-      object-fit: cover;
-      margin-right: 12px;
-      border-radius: 8px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      margin-bottom: 1rem;
     }
 
     footer {
@@ -116,83 +93,89 @@
       color: #9ca3af;
       text-align: center;
       padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 
 <body>
 
-<!-- HERO / COVER -->
-<header class="hero">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="assets/background.mp4" type="video/mp4">
-  </video>
+  <!-- =========================
+       TOP FULLSCREEN SCROLLING IMAGES
+       ========================= -->
+  <div class="hero">
+    <div class="hero-track">
+      <img src="assets/img1.jpg" alt="Image 1">
+      <img src="assets/img2.jpg" alt="Image 2">
+      <img src="assets/img1.jpg" alt="Image 1 duplicate">
+      <img src="assets/img2.jpg" alt="Image 2 duplicate">
+    </div>
+  </div>
 
-  <div class="hero-overlay">
+  <!-- =========================
+       HEADER
+       ========================= -->
+  <header>
     <h1>Saptak Das</h1>
     <p>Student | Research Enthusiast | Developer</p>
     <nav>
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Hello! I am <strong>Saptak Das</strong>. I am interested in mathematics,
-    machine learning, scientific computing, and software development.
-    This webpage highlights my academic background and projects.
-  </p>
-</section>
+  <!-- =========================
+       ABOUT
+       ========================= -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I am <strong>Saptak Das</strong>.  
+      I am interested in mathematics, machine learning,
+      scientific computing, and software development.
+    </p>
+  </section>
 
-<section id="education">
-  <h2>Education</h2>
-  <ul>
-    <li><strong>BS–MS</strong> – [Your Institute Name]</li>
-    <li>Research Interests: Machine Learning, Numerical Methods, AI</li>
-  </ul>
-</section>
+  <!-- =========================
+       EDUCATION
+       ========================= -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>BS–MS</strong> – Your Institute Name</li>
+      <li>Interests: Mathematics, Machine Learning, Scientific Computing</li>
+    </ul>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>Academic Timetable Scheduler (Python, Gradio)</li>
-    <li>Machine Learning Models & Experiments</li>
-    <li>Scientific Computing Tools</li>
-  </ul>
-</section>
+  <!-- =========================
+       PROJECTS
+       ========================= -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Timetable Scheduler (Python, Gradio)</li>
+      <li>Machine Learning Models</li>
+      <li>Scientific Computing Tools</li>
+    </ul>
+  </section>
 
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="slider">
-    <div class="slide-track">
-      <img src="assets/img1.jpg">
-      <img src="assets/img2.jpg">
-      <img src="assets/img3.jpg">
-      <img src="assets/img4.jpg">
-      <img src="assets/img1.jpg">
-      <img src="assets/img2.jpg">
-      <img src="assets/img3.jpg">
-      <img src="assets/img4.jpg">
-    </div>
-  </div>
-</section>
+  <!-- =========================
+       CONTACT
+       ========================= -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/Saptak-Das" target="_blank">github.com/Saptak-Das</a></p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></p>
-  <p>GitHub: <a href="https://github.com/d16324" target="_blank">github.com/d16324</a></p>
-  <p>LinkedIn: <a href="#" target="_blank">Add your LinkedIn</a></p>
-</section>
-
-<footer>
-  <p>© 2026 Saptak Das. All rights reserved.</p>
-</footer>
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer>
+    <p>© 2026 Saptak Das. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>

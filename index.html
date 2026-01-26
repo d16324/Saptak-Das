@@ -79,15 +79,17 @@ nav a:hover {
 }
 
 /* ================= HERO SLIDESHOW ================= */
+
 .slider {
-  width: 80%;
+  width: 100%;          /* ✅ FULL WIDTH */
   height: 65vh;
-  margin: 30px auto 0;
+  margin: 0;            /* ✅ NO CARD-LIKE MARGIN */
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  background: transparent; /* IMPORTANT */
+  border-radius: 0;     /* ✅ REMOVE ROUNDED CORNERS */
+  background: transparent;
 }
+
 
 /* Each slide */
 .slide {
@@ -113,17 +115,7 @@ nav a:hover {
   background: transparent;
 }
 
-/* Soft edge fade like IISER */
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 8%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
+
 
 .slider::before {
   left: 0;

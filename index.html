@@ -78,36 +78,66 @@ nav a:hover {
   border-bottom: 2px solid #38bdf8;
 }
 
-/* ================= SLIDER (NO ML BG) ================= */
-.slider {
-  width: 80%;              /* 🔴 CHANGE WIDTH HERE */
-  height: 65vh;
-  margin: 0 auto;
+
+/* ================= IISER-STYLE HERO SLIDER ================= */
+
+.hero-wrapper {
+  width: 100vw;
   overflow: hidden;
-  background: transparent;
+  position: relative;
 }
 
-.slider-track {
+.hero-slider {
   display: flex;
-  width: max-content;
-  animation: scroll 120s linear infinite;
+  gap: 4vw;
+  animation: heroScroll 90s linear infinite;
 }
 
-.slider:hover .slider-track {
+.hero-slider:hover {
   animation-play-state: paused;
 }
 
-.slider-track img {
-  width: 100vw;
-  height: 100%;
-  object-fit: cover;
+.hero-slide {
+  min-width: 80vw;            /* MAIN IMAGE SIZE */
+  height: 65vh;
+  border-radius: 14px;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+/* Soft fade on sides */
+.hero-wrapper::before,
+.hero-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 12vw;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #020617 30%, transparent);
+}
+
+.hero-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #020617 30%, transparent);
+}
+
+@keyframes heroScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-400vw); } /* adjust for number of slides */
+}
+
 
 /* ================= CONTENT ================= */
 main {
@@ -183,16 +213,24 @@ footer {
 <!-- 🔴 ML BACKGROUND END -->
 
 <!-- IMAGE SLIDER (EXCLUDED) -->
-<div class="slider">
-  <div class="slider-track">
-    <img src="assets/img1.jpg">
-    <img src="assets/img2.JPG">
-    <img src="assets/img3.jpg">
-    <img src="assets/img4.JPG">
-    <img src="assets/img5.JPG">
-    <img src="assets/img6.jpg">
+<!-- IISER-STYLE HERO SLIDER -->
+<div class="hero-wrapper">
+  <div class="hero-slider">
+    <div class="hero-slide"><img src="assets/img1.jpg"></div>
+    <div class="hero-slide"><img src="assets/img2.jpg"></div>
+    <div class="hero-slide"><img src="assets/img3.jpg"></div>
+    <div class="hero-slide"><img src="assets/img4.jpg"></div>
+    <div class="hero-slide"><img src="assets/img5.jpg"></div>
+
+    <!-- duplicate slides for seamless loop -->
+    <div class="hero-slide"><img src="assets/img1.jpg"></div>
+    <div class="hero-slide"><img src="assets/img2.jpg"></div>
+    <div class="hero-slide"><img src="assets/img3.jpg"></div>
+    <div class="hero-slide"><img src="assets/img4.jpg"></div>
+    <div class="hero-slide"><img src="assets/img5.jpg"></div>
   </div>
 </div>
+
 
 <!-- 🔴 ML BACKGROUND CONTINUES -->
 <div class="ml-background">

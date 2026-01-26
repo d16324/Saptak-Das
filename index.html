@@ -136,8 +136,37 @@ nav a:hover {
   );
 }
 
+/* ================= SLIDE CAPTION ================= */
+.caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 20px;
 
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25),
+    transparent
+  );
 
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* Show caption only on active slide */
+.slide.active .caption {
+  opacity: 1;
+}
+
+  
 .slider::before {
   left: 0;
   background: linear-gradient(to right, rgba(2,6,23,0.9), transparent);
@@ -222,35 +251,149 @@ footer {
 
 <!-- HERO SLIDESHOW -->
 <div class="slider">
-  <div class="slide active"><img src="assets/img1.jpg"></div>
-  <div class="slide"><img src="assets/img2.jpg"></div>
-  <div class="slide"><img src="assets/img3.jpg"></div>
-  <div class="slide"><img src="assets/img4.jpg"></div>
-  <div class="slide"><img src="assets/img5.jpg"></div>
-  <div class="slide"><img src="assets/img6.jpg"></div>
-  <div class="slide"><img src="assets/img7.JPG"></div>
-  <div class="slide"><img src="assets/img8.JPG"></div>
-  <div class="slide"><img src="assets/img9.JPG"></div>
-  <div class="slide"><img src="assets/img10.JPG"></div>
-  <div class="slide"><img src="assets/img11.JPG"></div>
-  <div class="slide"><img src="assets/img12.JPG"></div>
-  <div class="slide"><img src="assets/img13.JPG"></div>
-  <div class="slide"><img src="assets/img14.JPG"></div>
-  <div class="slide"><img src="assets/img15.JPG"></div>
-  <div class="slide"><img src="assets/img16.JPG"></div>
-  <div class="slide"><img src="assets/img17.JPG"></div>
-  <div class="slide"><img src="assets/img18.JPG"></div>
-  <div class="slide"><img src="assets/img19.JPG"></div>
-  <div class="slide"><img src="assets/img20.JPG"></div>
-  <div class="slide"><img src="assets/img22.jpg"></div>
-  <div class="slide"><img src="assets/img23.png"></div>
-  <div class="slide"><img src="assets/img24.png"></div>
-  <div class="slide"><img src="assets/img25.png"></div>
-  <div class="slide"><img src="assets/img26.png"></div>
-  <div class="slide"><img src="assets/img27.png"></div>
-  <div class="slide"><img src="assets/img28.jpg"></div>
-  <div class="slide"><img src="assets/img29.jpg"></div>
+
+  <div class="slide active">
+    <img src="assets/img1.jpg" alt="">
+    <div class="caption">Caption for image 1</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img2.jpg" alt="">
+    <div class="caption">Caption for image 2</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img3.jpg" alt="">
+    <div class="caption">Caption for image 3</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img4.jpg" alt="">
+    <div class="caption">Caption for image 4</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img5.jpg" alt="">
+    <div class="caption">Caption for image 5</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img6.jpg" alt="">
+    <div class="caption">Caption for image 6</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img7.JPG" alt="">
+    <div class="caption">Caption for image 7</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img8.JPG" alt="">
+    <div class="caption">Caption for image 8</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img9.JPG" alt="">
+    <div class="caption">Caption for image 9</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img10.JPG" alt="">
+    <div class="caption">Caption for image 10</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img11.JPG" alt="">
+    <div class="caption">Caption for image 11</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img12.JPG" alt="">
+    <div class="caption">Caption for image 12</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img13.JPG" alt="">
+    <div class="caption">Caption for image 13</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img14.JPG" alt="">
+    <div class="caption">Caption for image 14</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img15.JPG" alt="">
+    <div class="caption">Caption for image 15</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img16.JPG" alt="">
+    <div class="caption">Caption for image 16</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img17.JPG" alt="">
+    <div class="caption">Caption for image 17</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img18.JPG" alt="">
+    <div class="caption">Caption for image 18</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img19.JPG" alt="">
+    <div class="caption">Caption for image 19</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img20.JPG" alt="">
+    <div class="caption">Caption for image 20</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img22.jpg" alt="">
+    <div class="caption">Caption for image 22</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img23.png" alt="">
+    <div class="caption">Caption for image 23</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img24.png" alt="">
+    <div class="caption">Caption for image 24</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img25.png" alt="">
+    <div class="caption">Caption for image 25</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img26.png" alt="">
+    <div class="caption">Caption for image 26</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img27.png" alt="">
+    <div class="caption">Caption for image 27</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img28.jpg" alt="">
+    <div class="caption">Caption for image 28</div>
+  </div>
+
+  <div class="slide">
+    <img src="assets/img29.jpg" alt="">
+    <div class="caption">Caption for image 29</div>
+  </div>
+
 </div>
+
 
 <main>
   <section id="about">

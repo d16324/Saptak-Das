@@ -14,7 +14,9 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -22,13 +24,13 @@ body {
   color: #e5e7eb;
 }
 
-/* ================= ML BACKGROUND ================= */
-.ml-background {
+/* ================= ML BACKGROUND (GLOBAL EXCEPT SLIDER) ================= */
+.page-bg {
   position: relative;
   background: url("assets/ml-bg.jpeg") center/cover no-repeat fixed;
 }
 
-.ml-background::before {
+.page-bg::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -40,9 +42,9 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: transparent;
-  border-bottom: 1px solid rgba(148,163,184,0.25);
+  z-index: 1000;
+  background: linear-gradient(135deg, #020617, #020617ee);
+  border-bottom: 1px solid rgba(148,163,184,0.2);
   padding: 14px 10px;
   text-align: center;
 }
@@ -69,75 +71,66 @@ nav a {
   color: #93c5fd;
   text-decoration: none;
   font-weight: 600;
+  padding-bottom: 4px;
   border-bottom: 2px solid transparent;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #fff;
+  color: #ffffff;
   border-bottom: 2px solid #38bdf8;
 }
 
-
-/* ================= IISER-STYLE HERO SLIDER ================= */
-
-.hero-wrapper {
-  width: 100vw;
-  overflow: hidden;
-  position: relative;
-}
-
-.hero-slider {
-  display: flex;
-  gap: 4vw;
-  animation: heroScroll 90s linear infinite;
-}
-
-.hero-slider:hover {
-  animation-play-state: paused;
-}
-
-.hero-slide {
-  min-width: 80vw;            /* MAIN IMAGE SIZE */
+/* ================= HERO SLIDESHOW (IISER STYLE) ================= */
+.slider {
+  width: 80%;
   height: 65vh;
-  border-radius: 14px;
+  margin: 30px auto 0;
+  position: relative;
   overflow: hidden;
-  flex-shrink: 0;
+  border-radius: 18px;
+  background: #020617;
 }
 
-.hero-slide img {
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Soft fade on sides */
-.hero-wrapper::before,
-.hero-wrapper::after {
+/* edge fade like IISER TVM */
+.slider::before,
+.slider::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 12vw;
+  width: 8%;
   height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 
-.hero-wrapper::before {
+.slider::before {
   left: 0;
   background: linear-gradient(to right, #020617 30%, transparent);
 }
 
-.hero-wrapper::after {
+.slider::after {
   right: 0;
   background: linear-gradient(to left, #020617 30%, transparent);
 }
-
-@keyframes heroScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-400vw); } /* adjust for number of slides */
-}
-
 
 /* ================= CONTENT ================= */
 main {
@@ -145,22 +138,22 @@ main {
   z-index: 1;
   max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 section {
   background: rgba(255,255,255,0.96);
   color: #020617;
-  padding: 32px;
-  margin-bottom: 34px;
-  border-radius: 14px;
+  padding: 34px;
+  margin-bottom: 36px;
+  border-radius: 16px;
   box-shadow: 0 30px 60px rgba(2,6,23,0.6);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 section:hover {
   transform: translateY(-4px);
-  box-shadow: 0 40px 80px rgba(56,189,248,0.4);
+  box-shadow: 0 40px 80px rgba(56,189,248,0.35);
 }
 
 section h2 {
@@ -179,24 +172,28 @@ footer {
   z-index: 1;
   text-align: center;
   padding: 22px;
-  background: transparent;
+  background: #020617;
   color: #94a3b8;
-  border-top: 1px solid rgba(148,163,184,0.25);
+  border-top: 1px solid rgba(148,163,184,0.2);
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  nav { gap: 20px; }
-  header h1 { font-size: 1.5rem; }
-  .slider { width: 95%; height: 40vh; }
+  nav {
+    gap: 20px;
+  }
+
+  .slider {
+    width: 95%;
+    height: 45vh;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔴 ML BACKGROUND START -->
-<div class="ml-background">
+<div class="page-bg">
 
 <header>
   <h1>Saptak Das</h1>
@@ -209,65 +206,49 @@ footer {
   </nav>
 </header>
 
+<!-- HERO SLIDESHOW -->
+<div class="slider">
+  <div class="slide active"><img src="assets/img1.jpg"></div>
+  <div class="slide"><img src="assets/img2.JPG"></div>
+  <div class="slide"><img src="assets/img3.jpg"></div>
+  <div class="slide"><img src="assets/img4.JPG"></div>
+  <div class="slide"><img src="assets/img5.JPG"></div>
+  <div class="slide"><img src="assets/img6.jpg"></div>
+  <div class="slide"><img src="assets/img7.JPG"></div>
+  <div class="slide"><img src="assets/img8.JPG"></div>
 </div>
-<!-- 🔴 ML BACKGROUND END -->
-
-<!-- IMAGE SLIDER (EXCLUDED) -->
-<!-- IISER-STYLE HERO SLIDER -->
-<div class="hero-wrapper">
-  <div class="hero-slider">
-    <div class="hero-slide"><img src="assets/img1.jpg"></div>
-    <div class="hero-slide"><img src="assets/img2.jpg"></div>
-    <div class="hero-slide"><img src="assets/img3.jpg"></div>
-    <div class="hero-slide"><img src="assets/img4.jpg"></div>
-    <div class="hero-slide"><img src="assets/img5.jpg"></div>
-
-    <!-- duplicate slides for seamless loop -->
-    <div class="hero-slide"><img src="assets/img1.jpg"></div>
-    <div class="hero-slide"><img src="assets/img2.jpg"></div>
-    <div class="hero-slide"><img src="assets/img3.jpg"></div>
-    <div class="hero-slide"><img src="assets/img4.jpg"></div>
-    <div class="hero-slide"><img src="assets/img5.jpg"></div>
-  </div>
-</div>
-
-
-<!-- 🔴 ML BACKGROUND CONTINUES -->
-<div class="ml-background">
 
 <main>
+  <section id="about">
+    <h2>🧠 About Me</h2>
+    <p>
+      I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
+      scientific computing, and research-oriented software development.
+    </p>
+  </section>
 
-<section id="about">
-  <h2>🧠 About Me</h2>
-  <p>
-    I am <strong>Saptak Das</strong>, interested in mathematics, machine learning,
-    scientific computing, and research-oriented software development.
-  </p>
-</section>
+  <section id="education">
+    <h2>🎓 Education</h2>
+    <p>
+      BS–MS student with a strong foundation in mathematics and computational sciences.
+    </p>
+  </section>
 
-<section id="education">
-  <h2>🎓 Education</h2>
-  <p>
-    BS–MS student with a strong foundation in mathematics and computational sciences.
-  </p>
-</section>
+  <section id="projects">
+    <h2>📊 Projects</h2>
+    <p>
+      Academic simulations, machine learning models, and software tools
+      for scientific and data-driven analysis.
+    </p>
+  </section>
 
-<section id="projects">
-  <h2>📊 Projects</h2>
-  <p>
-    Academic simulations, machine learning models, and software tools
-    for scientific and data-driven analysis.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>📬 Contact</h2>
-  <p>
-    Email: your-email@example.com<br>
-    GitHub: github.com/d16324
-  </p>
-</section>
-
+  <section id="contact">
+    <h2>📬 Contact</h2>
+    <p>
+      Email: your-email@example.com<br>
+      GitHub: github.com/d16324
+    </p>
+  </section>
 </main>
 
 <footer>
@@ -275,6 +256,18 @@ footer {
 </footer>
 
 </div>
+
+<!-- SLIDESHOW SCRIPT -->
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
+</script>
 
 </body>
 </html>

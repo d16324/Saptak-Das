@@ -62,8 +62,18 @@ header p {
 nav {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 28px;
+
+  /* 🔥 BIG SHARED CONTAINER */
+  padding: 12px 24px;
+  border-radius: 18px;
+
+  background: rgba(229, 231, 235, 0.65); /* soft gray glass */
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
+
 
 nav a {
   position: relative;
@@ -72,10 +82,8 @@ nav a {
   font-weight: 600;
   font-size: 1.2rem;
   padding: 6px 14px;
-  border-radius: 10px;
-  background: rgba(229, 231, 235, 0.65); /* soft gray */
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  background: none;
+  box-shadow: none;
   border-bottom: 2px solid transparent;
   transition: 0.3s;
 }

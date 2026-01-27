@@ -213,20 +213,22 @@ nav a:hover {
 
 /* ================= RESEARCH ACTIVITY SPACING ================= */
 
+
 #research .research-item {
-  margin-bottom: 1px;     /* small gap before Goal */
+  margin-bottom: 6px;     /* gap after Title + Guide */
 }
 
-#research p {
-  line-height: 1.45;      /* compact within paragraphs */
-  margin-bottom: 14px;    /* gap between different blocks */
+#research .research-item span {
+  display: block;
+  margin-bottom: 6px;     /* gap between Guide(s) and Goal */
 }
 
-/* Slight extra gap after each Goal paragraph */
-#research p strong:first-child {
-  display: inline-block;
-  margin-bottom: 1px;
+#research .research-goal {
+  line-height: 1.45;      /* compact inside Goal */
+  margin-top: 0;
+  margin-bottom: 18px;   /* space before next research item */
 }
+
 
 /* ================= PROJECT (READING PROJECT) SPACING ================= */
 
@@ -580,6 +582,7 @@ footer {
 
 
   <p>
+    <p class="research-goal">
     <strong>Goal:</strong>
     This research focuses on developing a Bayesian optimization–driven neural-symbolic AI framework
     to enable explainable, efficient learning from complex urban datasets. The objective is to
@@ -595,6 +598,7 @@ footer {
   </p>
 
   <p>
+    <p class="research-goal">
     <strong>Goal:</strong>
     This project explored clustering methodologies for high-dimensional biological data
     (19,814 × 769 gene score matrix) to identify meaningful subgroups within complex gene expression
@@ -613,6 +617,7 @@ footer {
   </p>
 
   <p>
+    <p class="research-goal">
     <strong>Goal:</strong>
     The thesis investigated the role of meteorological and environmental variables in influencing
     COVID-19 transmission dynamics in Kolkata. Multiple machine learning models were evaluated to

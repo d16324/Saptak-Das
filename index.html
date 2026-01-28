@@ -95,6 +95,63 @@ nav a:hover {
   border-bottom: 2px solid #38bdf8;
 }
 
+/* ================= HERO SLIDESHOW ================= */
+
+.slider {
+  width: 100%;          /* ✅ FULL WIDTH */
+  height: 65vh;
+  margin: 0;            /* ✅ NO CARD-LIKE MARGIN */
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;     /* ✅ REMOVE ROUNDED CORNERS */
+  background: transparent;
+}
+
+
+/* Each slide */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* 🔥 TRANSITION SPEED */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 48px;   /* 🔴 rounded corners */
+  overflow: hidden;      /* 🔴 clip image to rounded shape */
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Image behavior */
+
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+
+  /* STRONGER EDGE FADE */
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 50%,        /* fully visible only till 50% */
+    rgba(0,0,0,0.8) 65%,
+    rgba(0,0,0,0.4) 80%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 50%,
+    rgba(0,0,0,0.8) 65%,
+    rgba(0,0,0,0.4) 80%,
+    transparent 100%
+  );
+}
 
 
 /* ================= SLIDE CAPTION ================= */
@@ -128,47 +185,6 @@ nav a:hover {
 }
 
   
-/* ================= HERO SLIDER ================= */
-
-.slider {
-  width: 100%;
-  height: 65vh;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-/* 🔥 EDGE FADE — ADD THIS RIGHT AFTER .slider */
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 80px;                 /* fade width */
-  z-index: 2;
-  pointer-events: none;
-}
-
-.slider::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(2,6,23,0.95),
-    rgba(2,6,23,0.6),
-    transparent
-  );
-}
-
-.slider::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(2,6,23,0.95),
-    rgba(2,6,23,0.6),
-    transparent
-  );
-}
 
 
   

@@ -344,14 +344,36 @@ footer {
 }
 
 /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  nav { gap: 20px; }
 
+  /* HERO SLIDER */
   .slider {
-    width: 95%;
-    height: 45vh;
+    height: 40vh;
+  }
+
+  .slide img {
+    object-fit: cover;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .slide .caption {
+    font-size: 0.8rem;
+  }
+
+  /* NAV (optional improvement) */
+  nav {
+    gap: 14px;
+    padding: 10px 14px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
   }
 }
+
 </style>
 </head>
 

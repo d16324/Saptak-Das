@@ -63,8 +63,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-evenly;
-  width: 100%;
+  gap: 28px;
 
   /* 🔥 BIG SHARED CONTAINER */
   padding: 12px 24px;
@@ -94,7 +93,6 @@ nav a:hover {
   color: #ffffff;
   border-bottom: 2px solid #38bdf8;
 }
-
 
 /* ================= HERO SLIDESHOW ================= */
 
@@ -185,50 +183,16 @@ nav a:hover {
 }
 
   
-/* ================= HERO SLIDER ================= */
-
-.slider {
-  width: 100%;
-  height: 65vh;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-/* 🔥 EDGE FADE — ADD THIS RIGHT AFTER .slider */
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 80px;                 /* fade width */
-  z-index: 2;
-  pointer-events: none;
-}
-
 .slider::before {
   left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(2,6,23,0.95),
-    rgba(2,6,23,0.6),
-    transparent
-  );
+  background: linear-gradient(to right, rgba(2,6,23,0.9), transparent);
 }
 
 .slider::after {
   right: 0;
-  background: linear-gradient(
-    to left,
-    rgba(2,6,23,0.95),
-    rgba(2,6,23,0.6),
-    transparent
-  );
+  background: linear-gradient(to left, rgba(2,6,23,0.9), transparent);
 }
 
-
-  
 #about p {
   text-align: justify;
   text-justify: inter-word;
@@ -297,7 +261,7 @@ nav a:hover {
 }
 
 #talks .talk-item em {
-  /*display: inline-block;*/
+  display: inline-block;
   margin-bottom: 2px;      /* tight gap before venue/date */
 }
 
@@ -331,7 +295,7 @@ main {
   z-index: 1;
   max-width: 1100px;
   margin: auto;
-  padding: clamp(40px, 6vw, 70px) clamp(14px, 4vw, 20px);
+  padding: 70px 20px;
 }
 
 section {
@@ -370,53 +334,15 @@ footer {
   border-top: 1px solid rgba(148,163,184,0.2);
 }
 
-
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
+  nav { gap: 20px; }
 
-  /* HERO SLIDER */
   .slider {
-    height: 40vh;
-  }
-
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  header p {
-    font-size: 0.8rem;
-  }
-
-  
-  .slide img {
-    object-fit: cover;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .slide .caption {
-    font-size: 0.8rem;
-  }
-
-  /* NAV (optional improvement) */
-  nav {
-    flex-wrap: wrap;   
-    justify-content: center;
-    gap: 12px 18px;
-    padding: 10px 14px;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-    padding: 6px 10px;
-    text-align: center;
-    white-space: nowrap;
+    width: 95%;
+    height: 45vh;
   }
 }
-
-
-
 </style>
 </head>
 
@@ -432,8 +358,8 @@ footer {
     <a href="#education">Education</a>
     <a href="#web-systems">Web Systems Development</a>
     <a href="#research">Research Activity</a>
-    <a href="#reading-project">Project</a>
-    <a href="#talks">Talks</a>
+    <a href="#projects">Project</a>
+    <a href="#talks">Talks / Presentations</a>
     <a href="#workshops">Workshops</a>
     <a href="#teaching">Teaching Experience</a>
     <a href="#contact">Contact</a>
@@ -682,28 +608,28 @@ footer {
   <h2>🖥️ Web Systems Development</h2>
 
   <p>
-    <strong><em>1. Semester Course Scheduler System</em></strong><br>
+    <strong><em>Semester Course Scheduler System</em></strong><br>
     Designed an automated semester-wise course timetable scheduling system,
     significantly reducing scheduling conflicts, room conflicts and streamlining academic operations at
     <em>IISER Thiruvananthapuram</em>.
   </p>
 
   <p>
-    <strong><em>2. Exam Seating Allocation System</em></strong><br>
+    <strong><em>Exam Seating Allocation System</em></strong><br>
     Developed a Python-based web system to automate examination seating arrangements,
     reducing manual workload and minimizing allocation errors for
     <em>Ramakrishna Mission Residential College (RKMRC), Narendrapur</em>.
   </p>
 
   <p>
-    <strong><em>3. Exam Invigilation Duty Roster Generator</em></strong><br>
+    <strong><em>Exam Invigilation Duty Roster Generator</em></strong><br>
     Built a Python-based web application to generate fair and efficient invigilation duty rosters
     for faculty members, ensuring equitable workload distribution
     at <em>Ramakrishna Mission Residential College (RKMRC), Narendrapur</em>.
   </p>
 
   <p>
-    <strong><em>4. Daily Routine Generation System</em></strong> <em>(Ongoing)</em><br>
+    <strong><em>Daily Routine Generation System</em></strong> <em>(Ongoing)</em><br>
     Designing an automated Python-based daily routine generation system to optimize academic
     scheduling, reduce administrative effort, and ensure conflict-free allocation for
     <em>RKMVV, Malda</em>.
@@ -834,10 +760,11 @@ footer {
 
   
 <section id="talks">
-  <h2>🎤 Talks</h2>
+  <h2>🎤 Talks / Presentations</h2>
 
   <p class="talk-item">
-    <strong>1.</strong><strong><em>AI as a Productivity Partner: Using AI Tools in Everyday Academic & Professional Work</em></strong><br>
+    <strong>1.</strong>
+    <strong><em>AI as a Productivity Partner: Using AI Tools in Everyday Academic & Professional Work</em></strong><br>
     <span style="color:#14532d;">Mahadevananda Mahavidyalaya</span>,
     <span style="color:#374151;">Nov 13 – 15, 2025</span>
   </p>
@@ -871,7 +798,6 @@ footer {
   </p>
 
 </section>
-
 
   
 <section id="workshops">

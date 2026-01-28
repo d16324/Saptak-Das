@@ -37,62 +37,197 @@ body {
 }
 
 /* ================= HEADER ================= */
+
+
+
 header {
+
   position: relative;
-  top: 0;
+
+Copy
+
+Copy
+
   z-index: 5;
+
   background: transparent;
+
   border-bottom: 1px solid rgba(148,163,184,0.25);
+
   padding: clamp(10px, 2.5vw, 16px) clamp(8px, 3vw, 14px);
+
   text-align: center;
+
 }
+
+
+
+Copy
+
+Copy
+
+/* Name */
 
 header h1 {
+
   font-size: clamp(1.4rem, 3vw, 1.8rem);
-  font-weight: 700;
+
+Copy
+
+Copy
+
+  font-weight: 800;               /* 🔥 more bold */
+
   color: #f8fafc;
+
 }
+
+
+
+Copy
+
+Copy
+
+/* Subtitle */
 
 header p {
+
   font-size: clamp(0.75rem, 2vw, 0.9rem);
+
+Copy
+
+Copy
+
+  font-weight: 700;               /* 🔥 bold subtitle */
+
   color: #cbd5f5;
+
   margin: 4px 0 10px;
+
 }
+
+
+
+Copy
+
+Copy
+
+/* ================= NAV CONTAINER ================= */
 
 nav {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
+Copy
+
+Copy
+
+  flex-wrap: wrap;                /* ✅ mobile-safe */
+
   gap: clamp(12px, 3vw, 28px);
 
-  /* 🔥 BIG SHARED CONTAINER */
+
+
+Copy
+
+Copy
+
   padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 24px);
+
   border-radius: 18px;
 
-  background: rgba(186, 230, 253, 0.75); /* soft gray glass */
+
+
+Copy
+
+Copy
+
+  background: rgba(186, 230, 253, 0.8); /* 🔵 sky-blue glass */
+
   backdrop-filter: blur(8px);
 
+
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
 }
 
+
+
+Copy
+
+Copy
+
+/* ================= NAV LINKS ================= */
 
 nav a {
+
   position: relative;
-  color: #0f172a;
+
+Copy
+
+Copy
+
+  color: #0b1c33;                 /* 🔵 deep navy */
+
   text-decoration: none;
-  font-weight: 600;
+
+Copy
+
+Copy
+
+
+
+  font-weight: 800;               /* 🔥 bold header items */
+
   font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+
+Copy
+
+Copy
+
+
+
   padding: 6px 14px;
-  background: none;
-  box-shadow: none;
+
+Copy
+
+Copy
+
+  white-space: nowrap;            /* keeps words intact */
+
+
+
+  text-align: center;
+
+  white-space: nowrap;
+
+
+
   border-bottom: 2px solid transparent;
-  transition: 0.3s;
+
+Copy
+
+Copy
+
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+
 }
 
+
+
 nav a:hover {
+
   color: #ffffff;
+
   border-bottom: 2px solid #38bdf8;
+
 }
+
 
 
 /* ================= HERO SLIDESHOW ================= */

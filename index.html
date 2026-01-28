@@ -38,9 +38,9 @@ body {
 
 /* ================= HEADER ================= */
 
-
 header {
   position: relative;
+  top: 0;
   z-index: 5;
   background: transparent;
   border-bottom: 1px solid rgba(148,163,184,0.25);
@@ -48,61 +48,53 @@ header {
   text-align: center;
 }
 
-/* Name */
 header h1 {
   font-size: clamp(1.4rem, 3vw, 1.8rem);
-  font-weight: 800;               /* 🔥 more bold */
+  font-weight: 700;
   color: #f8fafc;
 }
 
-/* Subtitle */
 header p {
   font-size: clamp(0.75rem, 2vw, 0.9rem);
-  font-weight: 700;               /* 🔥 bold subtitle */
   color: #cbd5f5;
   margin: 4px 0 10px;
 }
 
-/* ================= NAV CONTAINER ================= */
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;                /* ✅ mobile-safe */
   gap: clamp(12px, 3vw, 28px);
 
+  /* 🔥 BIG SHARED CONTAINER */
   padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 24px);
   border-radius: 18px;
 
-  background: rgba(186, 230, 253, 0.8); /* 🔵 sky-blue glass */
+  background: rgba(186, 230, 253, 0.75); /* soft gray glass */
   backdrop-filter: blur(8px);
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ================= NAV LINKS ================= */
+
 nav a {
   position: relative;
-  color: #0b1c33;                 /* 🔵 deep navy */
+  color: #0f172a;
   text-decoration: none;
-
-  font-weight: 800;               /* 🔥 bold header items */
+  font-weight: 600;
   font-size: clamp(0.9rem, 2.2vw, 1.2rem);
-
   padding: 6px 14px;
-  white-space: nowrap;            /* keeps words intact */
-
-  text-align: center;
-  white-space: nowrap;
-
+  background: none;
+  box-shadow: none;
   border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: #ffffff;
   border-bottom: 2px solid #38bdf8;
 }
+
 
 
 

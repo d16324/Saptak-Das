@@ -208,9 +208,9 @@ nav a:hover {
   content: "";
   position: absolute;
   top: 0;
-  width: 10%;          /* controls fade width */
-  height: 100%;
-  z-index: 4;
+  bottom: 0;
+  width: 80px;                 /* fade width */
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -218,8 +218,8 @@ nav a:hover {
   left: 0;
   background: linear-gradient(
     to right,
-    rgba(2,6,23,0.9),
-    rgba(2,6,23,0.4),
+    rgba(2,6,23,0.95),
+    rgba(2,6,23,0.6),
     transparent
   );
 }
@@ -228,11 +228,12 @@ nav a:hover {
   right: 0;
   background: linear-gradient(
     to left,
-    rgba(2,6,23,0.9),
-    rgba(2,6,23,0.4),
+    rgba(2,6,23,0.95),
+    rgba(2,6,23,0.6),
     transparent
   );
 }
+
 
   
 #about p {

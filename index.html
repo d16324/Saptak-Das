@@ -94,6 +94,7 @@ nav a:hover {
   border-bottom: 2px solid #38bdf8;
 }
 
+
 /* ================= HERO SLIDESHOW ================= */
 
 .slider {
@@ -183,16 +184,50 @@ nav a:hover {
 }
 
   
+/* ================= HERO SLIDER ================= */
+
+.slider {
+  width: 100%;
+  height: 65vh;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* 🔥 EDGE FADE — ADD THIS RIGHT AFTER .slider */
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;                 /* fade width */
+  z-index: 2;
+  pointer-events: none;
+}
+
 .slider::before {
   left: 0;
-  background: linear-gradient(to right, rgba(2,6,23,0.9), transparent);
+  background: linear-gradient(
+    to right,
+    rgba(2,6,23,0.95),
+    rgba(2,6,23,0.6),
+    transparent
+  );
 }
 
 .slider::after {
   right: 0;
-  background: linear-gradient(to left, rgba(2,6,23,0.9), transparent);
+  background: linear-gradient(
+    to left,
+    rgba(2,6,23,0.95),
+    rgba(2,6,23,0.6),
+    transparent
+  );
 }
 
+
+  
 #about p {
   text-align: justify;
   text-justify: inter-word;
@@ -295,7 +330,7 @@ main {
   z-index: 1;
   max-width: 1100px;
   margin: auto;
-  padding: 70px 20px;
+  padding: clamp(40px, 6vw, 70px) clamp(14px, 4vw, 20px);
 }
 
 section {
@@ -334,15 +369,39 @@ footer {
   border-top: 1px solid rgba(148,163,184,0.2);
 }
 
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  nav { gap: 20px; }
 
+  /* HERO SLIDER */
   .slider {
-    width: 95%;
-    height: 45vh;
+    height: 40vh;
+  }
+
+  .slide img {
+    object-fit: cover;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .slide .caption {
+    font-size: 0.8rem;
+  }
+
+  /* NAV (optional improvement) */
+  nav {
+    gap: 14px;
+    padding: 10px 14px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
   }
 }
+
+
+
 </style>
 </head>
 
@@ -798,6 +857,7 @@ footer {
   </p>
 
 </section>
+
 
   
 <section id="workshops">
